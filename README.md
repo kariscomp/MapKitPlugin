@@ -10,8 +10,8 @@ Follow the instructions that are displayed after you install the plugin.
 
 Sample usage code
 -----------------
-
-var app = { 
+```js
+var app = {
     showMap: function() {
         var pins = [
             {
@@ -190,4 +190,5 @@ var app = {
             alert(JSON.stringify(response));
         }, null);
     }
-}
+};
+```
