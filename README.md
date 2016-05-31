@@ -1,0 +1,2 @@
+# MapKitPlugin
+Cordova MapKit plugin
