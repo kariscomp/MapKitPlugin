@@ -11,7 +11,7 @@ Follow the instructions that are displayed after you install the plugin.
 Sample usage code
 -----------------
 
-var app = {
+var app = { 
     showMap: function() {
         var pins = [
             {
