@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-applemapkit" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>MapKit</name>
+
+    <engines>
+        <engine name="cordova" version=">=4.0.0"/>
+    </engines>
+
+    <js-module name="MapKit" src="www/MapKit.js">
+        <clobbers target="mapKit"/>
+    </js-module>
+
+    <platform name="ios">
+        <framework src="MapKit.framework" />
+        <config-file parent="/*" target="config.xml">
+            <feature name="MapKit">
+                <param name="ios-package" value="MapKitView"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/MapKit.h"/>
+        <header-file src="src/ios/AsyncImageView.h"/>
+        <header-file src="src/ios/CDVAnnotation.h"/>
+
+        <source-file src="src/ios/MapKit.m"/>
+        <source-file src="src/ios/AsyncImageView.m"/>
+        <source-file src="src/ios/CDVAnnotation.m"/>
+    </platform>
+</plugin>
