@@ -33,6 +33,8 @@
 
 - (void)showMap:(CDVInvokedUrlCommand *)command;
 
+- (void)getCurrentPosition:(CDVInvokedUrlCommand *)command;
+
 - (void)setCenterLocation:(CDVInvokedUrlCommand *)command;
 
 - (void)drawRegion:(CDVInvokedUrlCommand *)command;
@@ -52,5 +54,7 @@
 - (void)drawPolygonOverlay:(CDVInvokedUrlCommand *)command;
 
 - (void)coordToAddress:(CDVInvokedUrlCommand *)command;
+
+- (void)setMapClickable:(CDVInvokedUrlCommand *)command;
 
 @end

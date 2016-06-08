@@ -39,15 +39,19 @@ var app = {
                 icon: mapKit.iconColors.HUE_GREEN
             }
         ];
+        var container = document.getElementById("map_canvas");
+        var options = {
+            mapContainer: container
+        };
         mapKit.showMap(function(){
             mapKit.addMapPins(pins, function() {
                 console.log('adMapPins success');
             }, function() { 
-                console.log('error');
+                console.log('error'); 
             });
         }, function(err){
             alert(JSON.stringify(err));
-        }, {height: 500});
+        }, options);
     },
     hideMap: function() {
         var success = function() {
@@ -83,8 +87,20 @@ var app = {
         var error = function() {
           console.log('error');
         };
-        mapKit.setLocation({lat: 49.27503, lon: -123.12138}, success, error);
-    },            
+        var options = {
+            coordinate: {lat: 49.27503, lon: -123.12138},
+            zoomLevel: 5,
+            animated: true
+        };
+        mapKit.setLocation(options, success, error);
+    },
+    getCenterCoords: function() {
+        mapKit.getCenterCoords(function(response) {
+            alert(JSON.stringify(response));
+        }, function(err) {
+            console.log(err);
+        });
+    },
     drawRegion: function() {
         var options = {
             coord: {lat: 49.27503, lon: -123.12138},
@@ -189,6 +205,9 @@ var app = {
         }, function(response) {
             alert(JSON.stringify(response));
         }, null);
+    },
+    setMapClickable: function() {
+        mapKit.setClickable(false);
     }
 };
 ```
